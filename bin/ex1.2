@@ -1,0 +1,12 @@
+#!/bin/bash
+#: Title       : ex1.2
+#: Date        : 2014-11-24
+#: Author      : "Arnd R. Strube" <arstrube@gmx.de>
+#: Version     : 1.0
+#: Description : Create script hw inside $HOME/bpl/bin; make it
+#:               executable; and the execute it.
+#: Options     : None
+
+echo printf \"%s\\n\" \"Hello, World!\" >$HOME/bpl/bin/hw
+chmod +x $HOME/bpl/bin/hw    #d chmod example
+$HOME/bpl/bin/hw
