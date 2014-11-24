@@ -7,7 +7,6 @@
 #                like floats
 #: Options     : None
 
-printf "%s\n" \
-  "$RANDOM.$RANDOM" "$RANDOM.$RANDOM" \
-  "$RANDOM.$RANDOM" "$RANDOM.$RANDOM"
+r='$RANDOM'
+printf "%s\n" $(eval "echo $r.$r $r.$r $r.$r $r.$r")
   
