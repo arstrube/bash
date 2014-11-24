@@ -1,0 +1,13 @@
+#!/bin/bash
+#: Title       : random
+#: Date        : 2014-11-24
+#: Author      : "Arnd R. Strube" <arstrube@gmx.de>
+#: Version     : 1.0
+#: Description : Exercise 2.2 -Create random numbers that look 
+#                like floats
+#: Options     : None
+
+printf "%s\n" \
+  "$RANDOM.$RANDOM" "$RANDOM.$RANDOM" \
+  "$RANDOM.$RANDOM" "$RANDOM.$RANDOM"
+  
