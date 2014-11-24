@@ -1,0 +1,9 @@
+#!/bin/bash
+#: Title       : hello
+#: Date        : 2014-11-24
+#: Author      : "Arnd R. Strube" <arstrube@gmx.de>
+#: Version     : 1.0
+#: Description : Print Hello and first command-line argument
+#: Options     : None
+
+printf "Hello, %s!\n" "$1"
