@@ -7,6 +7,6 @@
 #:               executable; and the execute it.
 #: Options     : None
 
-echo printf \"%s\\n\" \"Hello, World!\" >$HOME/bpl/bin/hw
+echo printf '"%s\n" "Hello, World!"' >$HOME/bpl/bin/hw
 chmod +x $HOME/bpl/bin/hw    #d chmod example
 $HOME/bpl/bin/hw
