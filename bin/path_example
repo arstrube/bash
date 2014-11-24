@@ -1,0 +1,26 @@
+#!/bin/bash
+#: Title       : path_example
+#: Date        : 2014-11-24
+#: Author      : "Arnd R. Strube" <arstrube@gmx.de>
+#: Version     : 1.0
+#: Description : Demonstrates PATH manipulation
+#: Options     : None
+
+cd ..
+oldpath=$PWD/bin
+
+echo Original path:
+echo $PATH
+echo
+
+PATH=$PATH:$oldpath
+echo New path: 
+echo $PATH
+echo
+cd bash
+
+## Remove a string from the end...
+PATH="${PATH%$oldpath}$PWD/bin"
+echo Changed path: 
+echo $PATH
+echo
