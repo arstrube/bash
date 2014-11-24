@@ -1,0 +1,31 @@
+#!/bin/bash
+#: Title       : report
+#: Date        : 2014-11-24
+#: Author      : "Arnd R. Strube" <arstrube@gmx.de>
+#: Version     : 1.0
+#: Description : Listing 2-2. Print formatted sales report
+#: Options     : None
+
+## Build a long sring of equal signs
+divider===============================
+divider=$divider$divider
+
+## Format strings for printf
+header="\n %-10s %11s %8s %11s\n"
+format=" %-10s %11.2f %8d %11.2f\n"
+
+## Width of header
+totalwidth=45
+
+## Print categories
+printf "$header" ITEM "PER UNIT" NUM TOTAL
+
+## Print divider to match width of report
+printf "%$totalwidth.${totalwidth}s\n" "$divider"
+
+## Print lines of report
+printf "$format" \
+  Chair 79.95 4 319.18 \
+  Table 209.99 1 209.99 \
+  Armchair 315.19 2 630.98
+  
