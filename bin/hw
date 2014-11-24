@@ -1,1 +1,9 @@
-echo Hello, World!
+#!/bin/bash
+#: Title       : hw
+#: Date        : 2014-11-24
+#: Author      : "Arnd R. Strube" <arstrube@gmx.de>
+#: Version     : 1.0
+#: Description : Print Hello, World!
+#: Options     : None
+
+printf "%s\n" "Hello, World!"
