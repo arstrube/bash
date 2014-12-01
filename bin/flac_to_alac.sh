@@ -9,7 +9,7 @@
 
 ## convert flac to apple lossless
 convert_file_to_alac() {
-  echo ffmpeg -i \""$1"\" -c:a alac \"`basename "$1" .flac`.m4a\" \&\& rm -f "$1" #! or -codec:a / -acodec.
+  echo ffmpeg -i \""$1"\" -c:a alac \"`basename "$1" .flac`.m4a\" \&\& rm -f \""$1"\" #! or -codec:a / -acodec.
 }
 
 convert_directory_to_alac() {
