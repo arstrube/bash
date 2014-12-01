@@ -4,23 +4,24 @@
 #: Author      : "Arnd R. Strube" <arstrube@gmx.de>
 #: Version     : 1.0
 #: Description : Convert all FLAC encoded audio files to Apple Lossless
-#:             : recursively
+#:             : recursively, starting at current directory.
 #: Options     : None
 
 ## convert flac to apple lossless
-convert_to_alac() {
-  for dir in ${*}; do
-    echo   DIRECTORY IS: $dir;
+convert_file_to_alac() {
+  echo ffmpeg -i \""$1"\" -c:a alac \"`basename "$1" .flac`.m4a\" \&\& rm -f "$1" #! or -codec:a / -acodec.
+}
+
+convert_directory_to_alac() {
+  for item in *; do
+    if [ -d "$item" ]; then
+      pushd "$item" >/dev/null; 
+      convert_directory_to_alac; 
+      popd >/dev/null;
+    else
+      case "$item" in *.flac) convert_file_to_alac "$item"; esac  
+    fi;
   done;
 }
 
-convert_to_alac *
-
-# for dir in ${$1}; do
-#     pushd $dir
-#     for file in $(ls *.flac); do
-#         echo     ffmpeg -i "$file" -c:a alac `basename $file .flac`.m4a; #! or -codec:a / -acodec.
-#     done;
-#     popd;
-# done;
-#
+convert_directory_to_alac
